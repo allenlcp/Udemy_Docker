@@ -13,6 +13,16 @@ Format command and log output
 https://docs.docker.com/config/formatting/
 
 
+DNS
+https://howdns.works/
+https://dyn.com/blog/dns-why-its-important-how-it-works/
+
+Docker Networks: DNS
+* Containers shouldn't rely on IP's for inter-communication
+* DNS for friendly names is built-in if you use custom networks
+* There create custom networks rather than the link command 
+
+
 Install 'ps aux' capability on linux
 ``` bash
 apt-get install -y procps
