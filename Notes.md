@@ -15,6 +15,7 @@ https://docs.docker.com/config/formatting/
 
 Install 'ps aux' capability on linux
 ``` bash
+apt-get update
 apt-get install -y procps
 ```
 
