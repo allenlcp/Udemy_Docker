@@ -157,6 +157,7 @@ docker ps -a
 ``` bash
 docker image ls
 ```
+___
 
 ## What's Going On In Containers: CLI Process Monitoring
 
@@ -170,25 +171,39 @@ docker container top mysql
 
 docker container top nginx
 
+Get back json array on how the container was started
+``` bash
 docker container inspect mysql
+```
 
 docker container stats --help
 
+Returns live stats of running container
+``` bash
 docker container stats
+```
 
 docker container ls
 
+___
+
 ## Getting a Shell Inside Containers: No Need for SSH
-
-docker container run -help
-
+Start new container interactively (i and t are sperate commands)
+-t -> pseudo=tty - simulates a real terminal like ssh does
+-i -> keep session open to receive terminal command
+bash -> is additinal command - passing bash as argument
+``` bash
 docker container run -it --name proxy nginx bash
+```
+Enter exit to exit container - however it will stop the container - this is because it exited the command parsed in - in this case bash command
 
 docker container ls
 
 docker container ls -a
 
+``` bash
 docker container run -it --name ubuntu ubuntu
+```
 
 docker container ls
 
@@ -196,30 +211,57 @@ docker container ls -a
 
 docker container start --help
 
+-ai -> Starting existing container in interactive mode
+``` bash
 docker container start -ai ubuntu
+```
 
 docker container exec --help
 
+exec -it -> run additional command in existing container
+``` bash
 docker container exec -it mysql bash
+```
 
 docker container ls
 
+pull -> will pull latest image from repository
+``` java
 docker pull alpine
+```
 
 docker image ls
 
+Starting an alpine container in interactive mode by passing bash command
+``` bash
 docker container run -it alpine bash
+```
+Returns an error because image/container does not have "bash" installed
+``` text
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:345: starting container process caused "exec: \"bash\": executable file not found in $PATH": unknown.
+```
 
+However, the container/image has "sh"
+``` bash
 docker container run -it alpine sh
+```
+
+___
 
 ## Docker Networks: Concepts for Private and Public Comms in Containers
 
 docker container run -p 80:80 --name webhost -d nginx
 
+Show the ports being used and forwarded
+``` bash
 docker container port webhost
+```
 
+Show the ipaddress of the container - different from host
+--format -> used here instead of grep (similar) as cleaner and more consistent
+``` bash
 docker container inspect --format '{{ .NetworkSettings.IPAddress }}' webhost
-
+```
 ## Docker Networks: CLI Management of Virtual Networks
 
 docker network ls
