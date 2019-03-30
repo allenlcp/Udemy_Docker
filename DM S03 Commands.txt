@@ -427,17 +427,30 @@ docker container run --rm -it ubuntu:14.04 bash
 
 docker ps -a
 
+___
+
 ## Assignment Answers: DNS Round Robin Testing
 
+Creates a new virtual network based on default bridge network settings
+``` bash
 docker network create dude
+```
 
+--net and --network (alis) both work
+``` bash
 docker container run -d --net dude --net-alias search elasticsearch:2
+```
 
-docker container ls
+docker container ls 
 
-docker container run --rm -- net dude alpine nslookup search
+Run container, run command "nslookup search", finaly exits and cleanup
+``` bash
+docker container run --rm --net dude alpine nslookup search
+```
 
+``` bash
 docker container run --rm --net dude centos curl -s search:9200
+```
 
 docker container ls
 
