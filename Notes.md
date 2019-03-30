@@ -25,6 +25,7 @@ Docker Networks: DNS
 
 Install 'ps aux' capability on linux
 ``` bash
+apt-get update
 apt-get install -y procps
 ```
 
@@ -40,5 +41,3 @@ Docker networks
 -p 8080:80 -> means open port 8080 on host route traffic to open port 80 on container
 
 However on your host you cannot have multiple containers listening on the same port
-
-Virtual separate networks
