@@ -18,6 +18,17 @@ Install 'ps aux' capability on linux
 apt-get install -y procps
 ```
 
+Install 'ping' capability on linx
+``` bash
+apt-get update
+apt-get install iputils-ping
+```
+
 Alphine use apk for package management
 
+Docker networks
+-p 8080:80 -> means open port 8080 on host route traffic to open port 80 on container
 
+However on your host you cannot have multiple containers listening on the same port
+
+Virtual separate networks
