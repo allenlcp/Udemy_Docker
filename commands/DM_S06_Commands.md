@@ -16,10 +16,12 @@ pcat docker-compose.yml
 docker-compose up
 ```
 
+-d is to run in the background
 ``` bash
 docker-compose up -d
 ```
 
+returns latest logs 
 ``` bash
 docker-compose logs
 ```
@@ -28,14 +30,17 @@ docker-compose logs
 docker-compose --help
 ```
 
+returns list of containers running
 ``` bash
 docker-compose ps
 ```
 
+returns list of processes running in each container
 ``` bash
 docker-compose top
 ```
 
+stop and clean up
 ``` bash
 docker-compose down
 ```
@@ -64,6 +69,7 @@ https://hub.docker.com
 docker-compose down --help
 ```
 
+-v removes the volume
 ``` bash
 docker-compose down -v
 ```
