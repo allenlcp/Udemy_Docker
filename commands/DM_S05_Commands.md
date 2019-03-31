@@ -90,10 +90,12 @@ local               mysql-db
 docker volume inspect mysql-db
 ```
 
+Even after deleting the container the volume mysql-db is still there
 ``` bash
 docker container rm -f mysql
 ```
 
+Running new container that points to the same volume as the previous container
 ``` bash
 docker container run -d --name mysql3 -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql
 ```
@@ -116,6 +118,7 @@ cd dockerfile-sample-2
 
 pcat Dockerfile
 
+Linking local directory ${pwd} to container directory
 ``` bash
 docker container run -d --name nginx -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
 ```

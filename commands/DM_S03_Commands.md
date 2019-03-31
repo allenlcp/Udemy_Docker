@@ -50,6 +50,7 @@ docker container run --publish 80:80 --detach --name webhost nginx
 docker container ls -a
 
 Since the container is running in the background now - we run the following command to view the logs
+Use -f command to keep watching "...logs -f webhost"
 ``` bash
 docker container logs webhost
 ```
