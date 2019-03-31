@@ -83,6 +83,30 @@ Data Volumes
 
 running inspect will show
 "Mounts" -> 
+``` text
+...
+ "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "673e303f9b0badb966a91ae1f6e44c7b325b9954f2ce3f547e7171a3317f30f8",
+                "Source": "/var/lib/docker/volumes/673e303f9b0badb966a91ae1f6e44c7b325b9954f2ce3f547e7171a3317f30f8/_data",
+                "Destination": "/var/lib/mysql",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+...
+```
 "Volume" -> 
+``` text
+...
+ "Volumes": {
+                "/var/lib/mysql": {}
+            },
+...
+```
+
 
 

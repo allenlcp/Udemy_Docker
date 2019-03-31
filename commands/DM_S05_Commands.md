@@ -32,7 +32,7 @@ docker volume inspect TAB COMPLETION
 ```
 
 ``` bash
-docker container run -d --name2 mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+docker container run -d --name mysql2 -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 ```
 
 ``` bash
@@ -63,16 +63,27 @@ docker volume ls
 docker container rm mysql mysql2
 ```
 
+Show volumes are here even though we deleted the containers
 ``` bash
 docker volume ls
 ```
 
+-v mysql-db: -> is the name of the volume to be created with this container
 ``` bash
 docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql
 ```
 
 ``` bash
 docker volume ls
+```
+Returns below:
+``` text
+workspace@workspace-VirtualBox:~/udemy_Docker/Workspace/tutorials$ docker volume ls
+DRIVER              VOLUME NAME
+local               673e303f9b0badb966a91ae1f6e44c7b325b9954f2ce3f547e7171a3317f30f8
+local               fd5c161acd68a3b1a1630bafa0fb805761db5a8ed55940c6ccef7edc33ea2fd1
+local               mysql-db
+
 ```
 
 ``` bash
