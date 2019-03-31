@@ -108,5 +108,40 @@ running inspect will show
 ...
 ```
 
+Bind Mounting
+ Can't use in Dockerfile, must be at container run
+
+___
+
+
+## **Docker Compose and The docker-compose.yml file**
+
+Comprised of 2 separate but related things
+1) YAML-formatted file that describes our solution options for:
+* containers
+* networks
+* volumes
+
+2) A CLI tool docker-compose used for local dev/test automation with those YAML files
+
+___
+
+YAML file
+See ../compose-sample-1/template.yml
+https://yaml.org/start.html
+https://yaml.org/refcard.html
+https://docs.docker.com/compose/compose-file/compose-versioning/
+https://github.com/docker/compose/releases
+
+
+CLI tool
+``` bash
+docker-compose up  # setup volumes/networks and start all containers
+docker-compose down # stop all containers and remove cont/vol/net
+```
+___
+
+
+
 
 
