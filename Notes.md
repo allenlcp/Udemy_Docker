@@ -62,3 +62,5 @@ ENV -> variables used in file
 RUN -> exec shell commands, use "&&" such that they all fit in one layer
 EXPOSE -> by default no ports are exposed to vn. Exposing them only open ports in the container, therefore, we still need to run -p commands to route localhost interface host to the ones we have exposed here
 CMD -> required param - it is the final command that will be run everything we run a new container from the image 
+WORKDIR ->change directory - using workdir is preferred to using 'RUN cd /some/path'
+COPY -> copy command
