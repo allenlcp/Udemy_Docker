@@ -2,6 +2,7 @@
 
 ## Persistent Data: Data Volumes
 
+
 ``` bash
 docker pull mysql
 ```
