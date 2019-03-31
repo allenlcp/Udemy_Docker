@@ -64,3 +64,25 @@ EXPOSE -> by default no ports are exposed to vn. Exposing them only open ports i
 CMD -> required param - it is the final command that will be run everything we run a new container from the image 
 WORKDIR ->change directory - using workdir is preferred to using 'RUN cd /some/path'
 COPY -> copy command
+
+## **Container lifetime & persistence**
+https://www.oreilly.com/ideas/an-introduction-to-immutable-infrastructure
+
+https://12factor.net/
+
+https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c
+
+https://docs.docker.com/storage/
+
+Persistent data - 2 ways in docker
+1) Volumes - make special location outside of container UFS
+2) Bind Mounts - link container path to host path
+
+Data Volumes
+* need manual deletion 
+
+running inspect will show
+"Mounts" -> 
+"Volume" -> 
+
+
