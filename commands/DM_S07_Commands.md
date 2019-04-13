@@ -25,7 +25,7 @@ docker swarm --help
 ``` bash
 docker service --help
 ```
-
+REPLICAS -> actually running/specified to run
 ``` bash
 docker service create alpine ping 8.8.8.8
 ```
@@ -113,6 +113,16 @@ docker-machine ssh node1
 ``` bash
 docker-machine env node1
 ```
+## In vBox
+```bash
+1) Need to install virtualbox first:
+sudo apt install virtualbox
+2) Run command:
+docker-machine create node1 --virtualbox-no-vtx-check
+```
+
+
+
 
 ``` bash
 docker info
